@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1859DBEC1C40FBA000F7C768 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1859DBEB1C40FBA000F7C768 /* CoreData.framework */; };
+		1859DBF01C41BF5800F7C768 /* M2DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBEE1C41BF5800F7C768 /* M2DataModel.xcdatamodeld */; };
+		1859DBF61C41C1DE00F7C768 /* Recode+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBF31C41C1DE00F7C768 /* Recode+CoreDataProperties.m */; };
+		1859DBF71C41C1DE00F7C768 /* Recode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBF51C41C1DE00F7C768 /* Recode.m */; };
+		1859DBFA1C41C40B00F7C768 /* UIButton+M2Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBF91C41C40B00F7C768 /* UIButton+M2Additions.m */; };
+		1859DBFD1C41C5FE00F7C768 /* UIImage+M2Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBFC1C41C5FE00F7C768 /* UIImage+M2Addtions.m */; };
+		1859DBFF1C41CB0F00F7C768 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1859DBFE1C41CB0F00F7C768 /* ImageIO.framework */; };
+		1859DC021C41D6EB00F7C768 /* M2RecordsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859DC011C41D6EB00F7C768 /* M2RecordsTableViewController.m */; };
 		2443DC5618D662CA00C920C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2443DC5518D662CA00C920C1 /* Foundation.framework */; };
 		2443DC5818D662CA00C920C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2443DC5718D662CA00C920C1 /* CoreGraphics.framework */; };
 		2443DC5A18D662CA00C920C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2443DC5918D662CA00C920C1 /* UIKit.framework */; };
@@ -47,6 +55,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1859DBEB1C40FBA000F7C768 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1859DBEF1C41BF5800F7C768 /* M2DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = M2DataModel.xcdatamodel; sourceTree = "<group>"; };
+		1859DBF21C41C1DE00F7C768 /* Recode+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Recode+CoreDataProperties.h"; path = "../Recode+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1859DBF31C41C1DE00F7C768 /* Recode+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Recode+CoreDataProperties.m"; path = "../Recode+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1859DBF41C41C1DE00F7C768 /* Recode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Recode.h; path = ../Recode.h; sourceTree = "<group>"; };
+		1859DBF51C41C1DE00F7C768 /* Recode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Recode.m; path = ../Recode.m; sourceTree = "<group>"; };
+		1859DBF81C41C40B00F7C768 /* UIButton+M2Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+M2Additions.h"; sourceTree = "<group>"; };
+		1859DBF91C41C40B00F7C768 /* UIButton+M2Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+M2Additions.m"; sourceTree = "<group>"; };
+		1859DBFB1C41C5FE00F7C768 /* UIImage+M2Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+M2Addtions.h"; sourceTree = "<group>"; };
+		1859DBFC1C41C5FE00F7C768 /* UIImage+M2Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+M2Addtions.m"; sourceTree = "<group>"; };
+		1859DBFE1C41CB0F00F7C768 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		1859DC001C41D6EB00F7C768 /* M2RecordsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2RecordsTableViewController.h; sourceTree = "<group>"; };
+		1859DC011C41D6EB00F7C768 /* M2RecordsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2RecordsTableViewController.m; sourceTree = "<group>"; };
 		2443DC5218D662CA00C920C1 /* m2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = m2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2443DC5518D662CA00C920C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2443DC5718D662CA00C920C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1859DBFF1C41CB0F00F7C768 /* ImageIO.framework in Frameworks */,
+				1859DBEC1C40FBA000F7C768 /* CoreData.framework in Frameworks */,
 				2443DC5818D662CA00C920C1 /* CoreGraphics.framework in Frameworks */,
 				2443DC5A18D662CA00C920C1 /* UIKit.framework in Frameworks */,
 				2443DC5C18D662CA00C920C1 /* SpriteKit.framework in Frameworks */,
@@ -119,6 +142,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1859DBED1C41BF3F00F7C768 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1859DBF21C41C1DE00F7C768 /* Recode+CoreDataProperties.h */,
+				1859DBF31C41C1DE00F7C768 /* Recode+CoreDataProperties.m */,
+				1859DBF41C41C1DE00F7C768 /* Recode.h */,
+				1859DBF51C41C1DE00F7C768 /* Recode.m */,
+				1859DBEE1C41BF5800F7C768 /* M2DataModel.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1859DBF11C41C0EA00F7C768 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1859DBF81C41C40B00F7C768 /* UIButton+M2Additions.h */,
+				1859DBF91C41C40B00F7C768 /* UIButton+M2Additions.m */,
+				1859DBFB1C41C5FE00F7C768 /* UIImage+M2Addtions.h */,
+				1859DBFC1C41C5FE00F7C768 /* UIImage+M2Addtions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		2443DC4918D662CA00C920C1 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +187,8 @@
 		2443DC5418D662CA00C920C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1859DBFE1C41CB0F00F7C768 /* ImageIO.framework */,
+				1859DBEB1C40FBA000F7C768 /* CoreData.framework */,
 				2443DC5518D662CA00C920C1 /* Foundation.framework */,
 				2443DC5718D662CA00C920C1 /* CoreGraphics.framework */,
 				2443DC5918D662CA00C920C1 /* UIKit.framework */,
@@ -153,6 +201,8 @@
 		2443DC5D18D662CA00C920C1 /* m2048 */ = {
 			isa = PBXGroup;
 			children = (
+				1859DBF11C41C0EA00F7C768 /* Categories */,
+				1859DBED1C41BF3F00F7C768 /* Model */,
 				2443DC6618D662CA00C920C1 /* M2AppDelegate.h */,
 				2443DC6718D662CA00C920C1 /* M2AppDelegate.m */,
 				2443DC6918D662CA00C920C1 /* Main.storyboard */,
@@ -239,6 +289,8 @@
 				2443DC9F18D6647000C920C1 /* M2SettingsViewController.m */,
 				24C4517118E140AE0001FCFD /* M2SettingsDetailViewController.h */,
 				24C4517218E140AE0001FCFD /* M2SettingsDetailViewController.m */,
+				1859DC001C41D6EB00F7C768 /* M2RecordsTableViewController.h */,
+				1859DC011C41D6EB00F7C768 /* M2RecordsTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -311,7 +363,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = M2;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Danqing;
 				TargetAttributes = {
 					2443DC5118D662CA00C920C1 = {
@@ -373,13 +425,19 @@
 				24C4516818DD64A90001FCFD /* M2GridView.m in Sources */,
 				2443DC9A18D663FC00C920C1 /* M2Scene.m in Sources */,
 				24C4515E18D6DC740001FCFD /* M2Grid.m in Sources */,
+				1859DC021C41D6EB00F7C768 /* M2RecordsTableViewController.m in Sources */,
 				24C4518118E265390001FCFD /* M2Overlay.m in Sources */,
+				1859DBF71C41C1DE00F7C768 /* Recode.m in Sources */,
+				1859DBFD1C41C5FE00F7C768 /* UIImage+M2Addtions.m in Sources */,
 				2443DCAF18D6C18400C920C1 /* M2Tile.m in Sources */,
+				1859DBFA1C41C40B00F7C768 /* UIButton+M2Additions.m in Sources */,
 				2443DCA018D6647000C920C1 /* M2SettingsViewController.m in Sources */,
 				24C4517018DFF10B0001FCFD /* M2ScoreView.m in Sources */,
+				1859DBF01C41BF5800F7C768 /* M2DataModel.xcdatamodeld in Sources */,
 				2443DCA318D6649500C920C1 /* M2Theme.m in Sources */,
 				24C4517318E140AE0001FCFD /* M2SettingsDetailViewController.m in Sources */,
 				24C4516418DABABE0001FCFD /* M2GlobalState.m in Sources */,
+				1859DBF61C41C1DE00F7C768 /* Recode+CoreDataProperties.m in Sources */,
 				2443DC6818D662CA00C920C1 /* M2AppDelegate.m in Sources */,
 				2443DC9B18D663FC00C920C1 /* M2GameManager.m in Sources */,
 			);
@@ -449,6 +507,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -510,6 +569,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "m2048/m2048-Prefix.pch";
 				INFOPLIST_FILE = "m2048/m2048-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.danqing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -525,6 +585,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "m2048/m2048-Prefix.pch";
 				INFOPLIST_FILE = "m2048/m2048-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.danqing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -547,6 +608,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "m2048Tests/m2048Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.danqing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -565,6 +627,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "m2048/m2048-Prefix.pch";
 				INFOPLIST_FILE = "m2048Tests/m2048Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.danqing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -602,6 +665,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1859DBEE1C41BF5800F7C768 /* M2DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1859DBEF1C41BF5800F7C768 /* M2DataModel.xcdatamodel */,
+			);
+			currentVersion = 1859DBEF1C41BF5800F7C768 /* M2DataModel.xcdatamodel */;
+			path = M2DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2443DC4A18D662CA00C920C1 /* Project object */;
 }

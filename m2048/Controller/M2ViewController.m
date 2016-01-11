@@ -8,12 +8,15 @@
 
 #import "M2ViewController.h"
 #import "M2SettingsViewController.h"
+#import "M2AppDelegate.h"
 
 #import "M2Scene.h"
 #import "M2GameManager.h"
 #import "M2ScoreView.h"
 #import "M2Overlay.h"
 #import "M2GridView.h"
+#import "M2RecordsTableViewController.h"
+
 
 @implementation M2ViewController {
   IBOutlet UIButton *_restartButton;
@@ -27,52 +30,21 @@
   
   IBOutlet M2Overlay *_overlay;
   IBOutlet UIImageView *_overlayBackground;
+  IBOutlet UIButton *_saveButton;
+  IBOutlet UIButton *_recordsButton;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
   [super viewDidLoad];
   
   [self updateState];
-  
-  _bestView.score.text = [NSString stringWithFormat:@"%ld", (long)[Settings integerForKey:@"Best Score"]];
-  
-  _restartButton.layer.cornerRadius = [GSTATE cornerRadius];
-  _restartButton.layer.masksToBounds = YES;
-  
-  _settingsButton.layer.cornerRadius = [GSTATE cornerRadius];
-  _settingsButton.layer.masksToBounds = YES;
-  
-  _overlay.hidden = YES;
-  _overlayBackground.hidden = YES;
-  
-  // Configure the view.
-  SKView * skView = (SKView *)self.view;
-  
-  // Create and configure the scene.
-  M2Scene * scene = [M2Scene sceneWithSize:skView.bounds.size];
-  scene.scaleMode = SKSceneScaleModeAspectFill;
-  
-  // Present the scene.
-  [skView presentScene:scene];
-  [self updateScore:0];
-  [scene startNewGame];
-  
-  _scene = scene;
-  _scene.controller = self;
+  [self setupScreen];
 }
 
 
-- (void)updateState
-{
+- (void)updateState {
   [_scoreView updateAppearance];
   [_bestView updateAppearance];
-  
-  _restartButton.backgroundColor = [GSTATE buttonColor];
-  _restartButton.titleLabel.font = [UIFont fontWithName:[GSTATE boldFontName] size:14];
-  
-  _settingsButton.backgroundColor = [GSTATE buttonColor];
-  _settingsButton.titleLabel.font = [UIFont fontWithName:[GSTATE boldFontName] size:14];
   
   _targetScore.textColor = [GSTATE buttonColor];
   
@@ -102,8 +74,35 @@
 }
 
 
-- (void)updateScore:(NSInteger)score
-{
+- (void)setupScreen {
+    _bestView.score.text = [NSString stringWithFormat:@"%ld", (long)[Settings integerForKey:@"Best Score"]];
+    
+    [_recordsButton M2ButtonStyle];
+    [_settingsButton M2ButtonStyle];
+    [_saveButton M2ButtonStyle];
+    [_restartButton M2ButtonStyle];
+    
+    _overlay.hidden = YES;
+    _overlayBackground.hidden = YES;
+    
+    // Configure the view.
+    SKView * skView = (SKView *)self.view;
+    
+    // Create and configure the scene.
+    M2Scene * scene = [M2Scene sceneWithSize:skView.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    // Present the scene.
+    [skView presentScene:scene];
+    [self updateScore:0];
+    [scene startNewGame];
+    
+    _scene = scene;
+    _scene.controller = self;
+}
+
+
+- (void)updateScore:(NSInteger)score {
   _scoreView.score.text = [NSString stringWithFormat:@"%ld", (long)score];
   if ([Settings integerForKey:@"Best Score"] < score) {
     [Settings setInteger:score forKey:@"Best Score"];
@@ -112,29 +111,25 @@
 }
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   // Pause Sprite Kit. Otherwise the dismissal of the modal view would lag.
   ((SKView *)self.view).paused = YES;
 }
 
 
-- (IBAction)restart:(id)sender
-{
+- (IBAction)restart:(id)sender {
   [self hideOverlay];
   [self updateScore:0];
   [_scene startNewGame];
 }
 
 
-- (IBAction)keepPlaying:(id)sender
-{
+- (IBAction)keepPlaying:(id)sender {
   [self hideOverlay];
 }
 
 
-- (IBAction)done:(UIStoryboardSegue *)segue
-{
+- (IBAction)done:(UIStoryboardSegue *)segue {
   ((SKView *)self.view).paused = NO;
   if (GSTATE.needRefresh) {
     [GSTATE loadGlobalState];
@@ -145,8 +140,7 @@
 }
 
 
-- (void)endGame:(BOOL)won
-{
+- (void)endGame:(BOOL)won {
   _overlay.hidden = NO;
   _overlay.alpha = 0;
   _overlayBackground.hidden = NO;
@@ -178,11 +172,10 @@
 }
 
 
-- (void)hideOverlay
-{
+- (void)hideOverlay {
   ((SKView *)self.view).paused = NO;
   if (!_overlay.hidden) {
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.5 animations: ^{
       _overlay.alpha = 0;
       _overlayBackground.alpha = 0;
     } completion:^(BOOL finished) {
@@ -193,10 +186,42 @@
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-  // Release any cached data, images, etc that aren't in use.
+- (IBAction)didTapSaveButton:(UIButton *)sender {
+    // TODO: shall we supoort lower than IOS8?
+    __weak __typeof(self)weakSelf = self;
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Save Game?"
+                                message:@"Are you sure you want to save this screen as recode?"
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        UIImage *snapShot = [UIImage takeSnapshot:weakSelf.view];
+        NSString *path = [UIImage saveImage:snapShot];
+        
+        M2AppDelegate *appDelegate = (M2AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = appDelegate.managedObjectContext;
+        NSManagedObject *recodeInfo = [NSEntityDescription
+                                       insertNewObjectForEntityForName:@"Recode"
+                                       inManagedObjectContext:context];
+        [recodeInfo setValue:path forKey:@"imageUrl"];
+        [recodeInfo setValue:@([_scoreView.score.text integerValue]) forKey:@"score"];
+        [recodeInfo setValue:[NSDate date] forKey:@"recodeTime"];
+      
+        [appDelegate saveContext];
+    }];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:saveAction];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
+
+
+- (IBAction)didTapRecordsButton:(UIButton *)sender {
+    M2RecordsTableViewController *viewController = [[M2RecordsTableViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
 
 @end

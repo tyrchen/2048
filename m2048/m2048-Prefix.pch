@@ -14,4 +14,7 @@
   #import <UIKit/UIKit.h>
   #import <Foundation/Foundation.h>
   #import "M2GlobalState.h"
+  #import <CoreData/CoreData.h>
+  #import "UIButton+M2Additions.h"
+  #import "UIImage+M2Addtions.h"
 #endif
